@@ -29,6 +29,34 @@ Then follow each task README:
 - [Task 01 setup and test plan](./task-01/README.md)
 - [Task 02 setup and test plan](./task-02/README.md)
 
+## Environment Variables
+
+Copy each task’s `.env.example` to `.env` inside `/task-01` and `/task-02` before starting the backends.
+
+### Task 01 (`task-01/.env.example`)
+
+| Variable | Description |
+| --- | --- |
+| `PORT` | API server port (default `4001`) |
+| `NODE_ENV` | Runtime environment (`development` / `production`) |
+| `DATABASE_URL` | PostgreSQL connection string (default `postgres://pos:pos@localhost:5432/pos_task01`) |
+| `RESERVATION_MINUTES` | How long checkout stock stays reserved before expiry (default `5`) |
+| `PAYMENT_TIMEOUT_MS` | Mock payment gateway delay for the `timeout` outcome (default `2500`) |
+| `CORS_ORIGIN` | Allowed frontend origin for CORS (default `*`) |
+| `SEED_ON_START` | When `true`, seed demo products if the catalog is empty |
+
+### Task 02 (`task-02/.env.example`)
+
+| Variable | Description |
+| --- | --- |
+| `PORT` | API server port (default `4002`) |
+| `NODE_ENV` | Runtime environment (`development` / `production`) |
+| `DATABASE_URL` | PostgreSQL connection string (default `postgres://pos:pos@localhost:5432/pos_task02`) |
+| `RESERVATION_MINUTES` | How long checkout stock stays reserved before expiry (default `5`) |
+| `PAYMENT_TIMEOUT_MS` | Mock payment gateway delay for the `timeout` outcome (default `2500`) |
+| `CORS_ORIGIN` | Allowed frontend origin for CORS (default `*`) |
+| `SEED_ON_START` | When `true`, seed demo products if the catalog is empty |
+
 ## Design notes
 
 - Available stock lives on `products.stock`. Checkout decrements it inside a transaction using `SELECT ... FOR UPDATE`.
