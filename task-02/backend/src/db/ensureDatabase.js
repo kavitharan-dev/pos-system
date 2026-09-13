@@ -6,13 +6,24 @@ import { config } from "../config.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+function clientOptions(url) {
+  const needsSsl =
+    /render\.com|neon\.tech|\.amazonaws\.com/i.test(url) ||
+    process.env.NODE_ENV === "production";
+  return {
+    connectionString: url,
+    ...(needsSsl ? { ssl: { rejectUnauthorized: false } } : {}),
+  };
+}
+
 async function canConnect(url) {
-  const client = new pg.Client({ connectionString: url });
+  const client = new pg.Client(clientOptions(url));
   try {
     await client.connect();
     await client.query("SELECT 1");
     return true;
-  } catch {
+  } catch (err) {
+    console.error(`Database connect failed for ${url.replace(/:[^:@/]+@/, ":****@")}:`, err.message);
     return false;
   } finally {
     try {
@@ -40,7 +51,14 @@ export async function ensureDatabase({ dbName, port }) {
   }
 
   if (config.nodeEnv === "production") {
-    throw new Error("DATABASE_URL is required in production");
+    if (!config.databaseUrl) {
+      throw new Error(
+        "DATABASE_URL is required in production (env var missing or empty on the host)"
+      );
+    }
+    throw new Error(
+      "DATABASE_URL is set but unreachable in production (check host, password, DB name, SSL)"
+    );
   }
 
   const { default: EmbeddedPostgres } = await import("embedded-postgres");

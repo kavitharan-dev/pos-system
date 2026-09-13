@@ -7,10 +7,14 @@ export let pool;
 
 export function initPool(connectionString = config.databaseUrl) {
   if (pool) return pool;
+  const needsSsl =
+    /render\.com|neon\.tech|\.amazonaws\.com/i.test(connectionString || "") ||
+    config.nodeEnv === "production";
   pool = new Pool({
     connectionString,
     max: 20,
     idleTimeoutMillis: 30_000,
+    ...(needsSsl ? { ssl: { rejectUnauthorized: false } } : {}),
   });
   return pool;
 }
