@@ -1,6 +1,6 @@
 # Task 01 — POS Order & Inventory System
 
-**Live deployment:** _add URL here_  
+**Live deployment:** https://techloom-task-01.onrender.com  
 **Tech stack:** Node.js, Express, PostgreSQL, React (Vite)
 
 Concurrency-safe POS: product CRUD, cart → checkout stock reservation (5 minutes), mock payment (success / failure / timeout), duplicate-submission rejection, and an enforced order lifecycle.

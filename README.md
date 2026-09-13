@@ -1,8 +1,8 @@
 # Techloom Intern Assessment
 
 **Repository:** https://github.com/kavitharan-dev/pos-system  
-**Task 01 live URL:** _add deployment URL here_  
-**Task 02 live URL:** _add deployment URL here_
+**Task 01 live URL:** https://techloom-task-01.onrender.com  
+**Task 02 live URL:** https://techloom-task-02.onrender.com
 
 This repository contains both sections of the Techloom.ai Software Engineer Intern Practical Assessment.
 

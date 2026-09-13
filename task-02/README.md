@@ -1,6 +1,6 @@
 # Task 02 — E-Commerce Checkout & Payment System
 
-**Live deployment:** _add URL here_  
+**Live deployment:** https://techloom-task-02.onrender.com  
 **Tech stack:** Node.js, Express, PostgreSQL, React (Vite)
 
 Customer-facing storefront: search and filters, product details, cart, checkout stock reservation, mock payment, simulated refunds, and order history with status timeline.
