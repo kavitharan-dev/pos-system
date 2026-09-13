@@ -1,6 +1,6 @@
 # Techloom Intern Assessment
 
-**Repository:** _add public GitHub URL here_  
+**Repository:** https://github.com/kavitharan-dev/pos-system  
 **Task 01 live URL:** _add deployment URL here_  
 **Task 02 live URL:** _add deployment URL here_
 
