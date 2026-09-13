@@ -1,0 +1,17 @@
+node_modules/
+dist/
+build/
+.pg-data/
+data/
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+Thumbs.db
+coverage/
+.vscode/
+.idea/
+*.tmp
+*.swp
+.vite/

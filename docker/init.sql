@@ -1,0 +1,2 @@
+CREATE DATABASE pos_task01;
+CREATE DATABASE pos_task02;
