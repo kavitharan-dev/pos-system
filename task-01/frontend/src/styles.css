@@ -286,13 +286,15 @@ img { max-width: 100%; display: block; }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(188px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   gap: 14px;
   margin-top: 16px;
 }
 
 .product-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   padding: 12px;
   border-radius: 20px;
   background: linear-gradient(180deg, rgba(24, 39, 72, 0.92), rgba(12, 22, 44, 0.92));
@@ -394,14 +396,15 @@ img { max-width: 100%; display: block; }
 .tone-blue { background: rgba(94, 164, 255, 0.14); color: var(--blue); }
 
 .cart-fab {
-  position: absolute;
-  right: 14px;
-  bottom: 14px;
+  position: static;
+  flex: 0 0 36px;
   width: 36px;
   height: 36px;
   border: 0;
   border-radius: 12px;
   color: white;
+  display: grid;
+  place-items: center;
   background: linear-gradient(135deg, var(--purple), var(--purple-2));
   box-shadow: var(--glow-purple);
 }
@@ -893,8 +896,22 @@ img { max-width: 100%; display: block; }
 .muted-line { color: var(--muted); margin: 0 0 12px; }
 
 .btn.full { width: 100%; justify-content: center; }
-.card-actions { margin-top: 10px; }
-.card-actions .btn { flex: 1; justify-content: center; }
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 10px;
+  min-width: 0;
+}
+.card-actions .btn {
+  flex: 1 1 0;
+  min-width: 0;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .btn.outline-blue {
   background: transparent;
   border: 1px solid rgba(94, 164, 255, 0.55);

@@ -514,28 +514,33 @@ export default function App() {
                       <h3>{product.name}</h3>
                       <div className="price">{money(product.price)}</div>
                       <span className={`badge tone-${badge.tone}`}>{badge.label}</span>
-                      <div className="row card-actions">
+                      <div className="card-actions">
                         <button
                           className="btn ghost sm"
+                          type="button"
+                          title="Check stock"
                           onClick={() => setValidateProduct(product)}
                         >
-                          Check stock
+                          Stock
                         </button>
                         <button
                           className="btn ghost sm"
+                          type="button"
                           onClick={() => setProductForm(product)}
                         >
                           Edit
                         </button>
+                        <button
+                          className="cart-fab"
+                          type="button"
+                          disabled={product.stock < 1}
+                          onClick={() => addToCart(product)}
+                          title="Add to cart"
+                          aria-label="Add to cart"
+                        >
+                          <ShoppingCart size={16} />
+                        </button>
                       </div>
-                      <button
-                        className="cart-fab"
-                        disabled={product.stock < 1}
-                        onClick={() => addToCart(product)}
-                        title="Add to cart"
-                      >
-                        <ShoppingCart size={16} />
-                      </button>
                     </article>
                   );
                 })}

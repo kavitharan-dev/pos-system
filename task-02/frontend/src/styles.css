@@ -409,7 +409,7 @@ select:focus-visible,
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(188px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   gap: 14px;
   margin-top: 8px;
 }
@@ -491,15 +491,19 @@ select:focus-visible,
 
 .card-actions {
   display: flex;
-  gap: 6px;
+  gap: 8px;
   margin-top: auto;
+  align-items: stretch;
+  min-width: 0;
 }
 
 .card-actions .btn {
-  flex: 1;
-  padding: 8px;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 8px 10px;
   font-size: 12px;
   justify-content: center;
+  white-space: nowrap;
 }
 
 .price {
