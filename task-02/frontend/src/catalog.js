@@ -9,7 +9,7 @@ const IMAGES = {
   "USB-C Cable":
     "https://images.unsplash.com/photo-1625948515291-69613efd103f?auto=format&fit=crop&w=800&q=80",
   "Laptop Stand":
-    "https://images.unsplash.com/photo-1625842268584-8e8b5b82b0a8?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=800&q=80",
   "Bluetooth Headphones":
     "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
   Webcam:
